@@ -1,21 +1,21 @@
-name: Hello, World!
-description: Greet someone and record the time
-author: GitHub Actions
-
-# Define your inputs here.
+name: Short SHA
+description: Quickly gets the Short SHA in an Action
+author: Hudson
+branding:
+  icon: git-commit
+  color: black
 inputs:
-  who-to-greet:
-    description: Who to greet
+  commit-sha:
+    description: "Full length, 40 character SHA-1"
+    default: "${{ github.sha }}"
     required: true
-    default: World
 
-# Define your outputs here.
 outputs:
-  time:
-    description: The time we greeted you
+  sha:
+    description: The short SHA
 
 runs:
   using: docker
   image: Dockerfile
   env:
-    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+    GIT_SHA: ${{ inputs.commit-sha }}
