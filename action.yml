@@ -1,4 +1,4 @@
-name: Short SHA
+name: Get Short SHA
 description: Quickly gets the Short SHA in an Action
 author: Hudson
 branding:
