@@ -41,5 +41,11 @@ jobs:
         id: test
         uses: ./
 
+      - name: Marketplace Test
+        id: marketplace-test
+        uses: hudsonm62/short-sha@v1
+
       - name: Print Output
-        run: echo "${{ steps.test.outputs.sha }}"
+        run: |
+          echo "Local: ${{ steps.test.outputs.sha }}"
+          echo "Marketplace: ${{ steps.marketplace-test.outputs.sha }}"
