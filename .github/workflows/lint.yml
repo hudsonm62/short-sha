@@ -1,0 +1,25 @@
+name: Lint
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Prettier Lint
+        uses: actionsx/prettier@v3
+        with:
+          args: --check .
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
