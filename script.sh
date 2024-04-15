@@ -5,7 +5,7 @@ set -e
 GIT_SHA="$1"
 LENGTH="$2"
 
-SHORT_SHA=$(echo "${GIT_SHA}" | cut -c1-$LENGTH)
+SHORT_SHA=$(echo "${GIT_SHA}" | cut -c1-"$LENGTH")
 
 if [ -z "$CI" ]; then
     echo "sha=${SHORT_SHA}" # test only
