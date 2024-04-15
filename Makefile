@@ -1,5 +1,8 @@
-TAG = hudsonm62/short-sha
 EXAMPLE_SHA = I2E456789OI2E456789OI2E456789OI2E456789O
+LENGTH = 7
 
-build:
-	docker build -t $(TAG) .
+test:
+	script.sh $(EXAMPLE_SHA) $(LENGTH)
+
+lint:
+	prettier . --c && shellcheck -P script
