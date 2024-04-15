@@ -1,5 +1,5 @@
 name: Get Short SHA
-description: Quickly gets the Short SHA in an Action
+description: Quickly get the Short SHA-1 in your workflow.
 author: Hudson
 branding:
   icon: git-commit
