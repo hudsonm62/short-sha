@@ -7,27 +7,6 @@ permissions:
   contents: read
 
 jobs:
-  test-docker:
-    name: Docker Tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        id: checkout
-        uses: actions/checkout@v4
-
-      - name: Lint Dockerfile
-        uses: hadolint/hadolint-action@v3.1.0
-
-      - name: Setup Docker
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Docker
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          tags: hudsonm62/short-sha:test
-
   test-action:
     name: GitHub Actions Test
     runs-on: ubuntu-latest

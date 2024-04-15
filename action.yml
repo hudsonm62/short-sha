@@ -9,13 +9,20 @@ inputs:
     description: "Full length, 40 character SHA-1"
     default: "${{ github.sha }}"
     required: true
-
+  length:
+    description: "The length of the SHA to cut"
+    default: "7"
+    required: true
 outputs:
   sha:
     description: The short SHA
+    value: ${{ steps.make-sha.outputs.sha }}
 
 runs:
-  using: docker
-  image: Dockerfile
-  env:
-    GIT_SHA: ${{ inputs.commit-sha }}
+  using: composite
+  steps:
+    - id: make-sha
+      run: |
+        chmod +x ${GITHUB_ACTION_PATH}/script.sh
+        ${GITHUB_ACTION_PATH}/script.sh ${{ inputs.commit-sha }} ${{ inputs.length }}
+      shell: bash
