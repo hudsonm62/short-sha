@@ -1,11 +1,12 @@
 # Get Short SHA Action
 
+A dead-simple GitHub Action to quickly get the Short SHA in your workflow.
+
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/hudsonm62/short-sha?link=https%3A%2F%2Fgithub.com%2Fhudsonm62%2Fshort-sha%2Fissues)
 ![CI](https://github.com/hudsonm62/short-sha/actions/workflows/ci.yml/badge.svg)
 ![Lint](https://github.com/hudsonm62/short-sha/actions/workflows/lint.yml/badge.svg)
 ![License](https://img.shields.io/github/license/hudsonm62/short-sha)
 ![Code Style](https://img.shields.io/badge/code%20style-prettier-F7B93E?logo=Prettier)
-
-A dead-simple GitHub Action to quickly get the Short SHA in your workflow.
 
 ## Usage
 
