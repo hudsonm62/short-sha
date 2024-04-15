@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: short-sha
-        uses: hudsonm62/short-sha@v2
+        uses: hudsonm62/short-sha@v1
       - run: echo "${{ steps.short-sha.outputs.sha }}"
 ```
 
